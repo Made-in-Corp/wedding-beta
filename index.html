@@ -74,15 +74,19 @@
     -->
     <div id="video-container">
         <div class="video-overlay"></div>
-        <video autoplay="" loop="" src="./videoplayback2222.mp4" muted>
-        </video>
+        <!-- <video autoplay="autoplay" loop="" src="./videoplayback33.mov"**unmute**>
+        </video> -->
+         <video id="player" controls autoplay loop muted>
+            <source src="./playbackyoutube.mp4" type="video/mp4" />
+            지원 가능한 영상이 없습니다.
+          </video>
         <div class="video-content">
             <div class="inner"> 
               <h1>Welcome to <em>esoteric</em></h1>
               <p>영원한 사랑의 시작 에소테릭과 함께하세요.</p>
               <p>거제 대표님 샘플입니다. (배경영상 저작권 확보 안되어있음)</p>
-              <button id="mute" onclick="">Unmute</button>
-                <div class="scroll-icon">
+              <button id="unmutePlayerButton" onclick="unmute()">unmute</button>
+            <div class="scroll-icon">
                     <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="img/scroll-icon.png" alt=""></a>
                 </div>    
             </div>
@@ -265,19 +269,11 @@
     <script src="js/main.js"></script>
 
     <script>
-       var button = document.getElementById('mute');
-    button.onclick = function (){
-
-    if (video.muted == false) {    
-           video.muted = true;
-    }
-
-    else {
-        video.muted = false;
-    }
-
-    };
-    </script>
+        function unmute() {
+          const player = document.getElementById("player");
+          player.muted = false;
+        }
+      </script>
     
     
 </body>
